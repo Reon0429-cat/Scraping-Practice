@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class Gyudon: NSObject {
+    var size: String = ""
+    var price: String = ""
+}
