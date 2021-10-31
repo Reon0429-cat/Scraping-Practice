@@ -20,8 +20,6 @@
 		ABD201F2272F1AA6008BFE57 /* Scraping_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD201F1272F1AA6008BFE57 /* Scraping_PracticeUITests.swift */; };
 		ABD201F4272F1AA6008BFE57 /* Scraping_PracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD201F3272F1AA6008BFE57 /* Scraping_PracticeUITestsLaunchTests.swift */; };
 		ABD20201272F1B53008BFE57 /* Gyudon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD20200272F1B53008BFE57 /* Gyudon.swift */; };
-		ABD20204272F1D06008BFE57 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD20202272F1D06008BFE57 /* CustomTableViewCell.swift */; };
-		ABD20205272F1D06008BFE57 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD20203272F1D06008BFE57 /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +59,6 @@
 		ABD201F1272F1AA6008BFE57 /* Scraping_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scraping_PracticeUITests.swift; sourceTree = "<group>"; };
 		ABD201F3272F1AA6008BFE57 /* Scraping_PracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scraping_PracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ABD20200272F1B53008BFE57 /* Gyudon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gyudon.swift; sourceTree = "<group>"; };
-		ABD20202272F1D06008BFE57 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		ABD20203272F1D06008BFE57 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		BCF5B36A1054D5E9B05E88CC /* Pods-Scraping-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scraping-Practice.release.xcconfig"; path = "Target Support Files/Pods-Scraping-Practice/Pods-Scraping-Practice.release.xcconfig"; sourceTree = "<group>"; };
 		BE43C819205A94C9F4FF1A67 /* Pods-Scraping-PracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scraping-PracticeTests.debug.xcconfig"; path = "Target Support Files/Pods-Scraping-PracticeTests/Pods-Scraping-PracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C95CEF4FCE8F33AD5048F0F0 /* Pods_Scraping_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scraping_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,8 +144,6 @@
 				ABD201D0272F1AA5008BFE57 /* AppDelegate.swift */,
 				ABD201D2272F1AA5008BFE57 /* SceneDelegate.swift */,
 				ABD201D4272F1AA5008BFE57 /* ViewController.swift */,
-				ABD20202272F1D06008BFE57 /* CustomTableViewCell.swift */,
-				ABD20203272F1D06008BFE57 /* CustomTableViewCell.xib */,
 				ABD201D6272F1AA5008BFE57 /* Main.storyboard */,
 				ABD201D9272F1AA6008BFE57 /* Assets.xcassets */,
 				ABD201DB272F1AA6008BFE57 /* LaunchScreen.storyboard */,
@@ -287,7 +281,6 @@
 			files = (
 				ABD201DD272F1AA6008BFE57 /* LaunchScreen.storyboard in Resources */,
 				ABD201DA272F1AA6008BFE57 /* Assets.xcassets in Resources */,
-				ABD20205272F1D06008BFE57 /* CustomTableViewCell.xib in Resources */,
 				ABD201D8272F1AA5008BFE57 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +410,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD201D5272F1AA5008BFE57 /* ViewController.swift in Sources */,
-				ABD20204272F1D06008BFE57 /* CustomTableViewCell.swift in Sources */,
 				ABD20201272F1B53008BFE57 /* Gyudon.swift in Sources */,
 				ABD201D1272F1AA5008BFE57 /* AppDelegate.swift in Sources */,
 				ABD201D3272F1AA5008BFE57 /* SceneDelegate.swift in Sources */,

@@ -16,14 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-F8-zRh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ify-EI-8ef">
+                                <rect key="frame" x="170" y="74" width="74" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-K9-Td9">
+                                <rect key="frame" x="0.0" y="141" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="x9H-Qd-NKK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="t6S-PG-aVL">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x9H-Qd-NKK" id="HI2-JI-Kig">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6S-PG-aVL" id="xCT-9j-Buc">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -34,14 +40,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HzJ-F8-zRh" secondAttribute="bottom" id="4bd-nb-rYf"/>
-                            <constraint firstItem="HzJ-F8-zRh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EfN-I6-UJ1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HzJ-F8-zRh" secondAttribute="trailing" id="gj2-rM-Qqh"/>
-                            <constraint firstItem="HzJ-F8-zRh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wfh-6J-oAZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r8h-K9-Td9" secondAttribute="bottom" id="1dv-ue-PJK"/>
+                            <constraint firstItem="Ify-EI-8ef" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="87X-FX-9jk"/>
+                            <constraint firstItem="r8h-K9-Td9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9pL-hk-yp9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r8h-K9-Td9" secondAttribute="trailing" id="Cft-qN-nyw"/>
+                            <constraint firstItem="Ify-EI-8ef" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I22-tr-h6v"/>
+                            <constraint firstItem="r8h-K9-Td9" firstAttribute="top" secondItem="Ify-EI-8ef" secondAttribute="bottom" constant="30" id="or4-bn-EDa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="HzJ-F8-zRh" id="oHz-7M-qo7"/>
+                        <outlet property="contributionLabel" destination="Ify-EI-8ef" id="Vym-s6-cqd"/>
+                        <outlet property="tableView" destination="r8h-K9-Td9" id="CDx-Fc-nCH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
