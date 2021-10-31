@@ -11,32 +11,27 @@ import Kanna
 
 final class ViewController: UIViewController {
     
-    @IBOutlet private weak var contributionLabel: UILabel!
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
-    private var items = [(title: String, value: String)]()
+    private var gitHubGrass = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        setupCollectionView()
         letsScraping()
         
     }
     
     func letsScraping() {
-        AF.request("https://qiita.com/REON").responseString { response in
+        AF.request("https://github.com/Reon0429-cat").responseString { response in
             switch response.result {
                 case .success(let value):
                     if let doc = try? HTML(html: value, encoding: .utf8) {
-                        let postedArticles = doc.xpath("//span[@class='css-1s0lzlm e1ojqm5t4']").compactMap { $0.text }
-                        let postedArticleValues = doc.xpath("//span[@class='css-9yocrl e1ojqm5t5']").compactMap { $0.text }
-                        postedArticles.enumerated().forEach { index, postedArticle in
-                            self.items.append((title: postedArticle,
-                                               value: postedArticleValues[index]))
-                        }
-                        self.tableView.reloadData()
+                        let grass = doc.css("rect").compactMap { $0["data-count"] }
+                        self.gitHubGrass = grass.compactMap { Int($0) }
+                        print("DEBUG_PRINT: ", self.gitHubGrass.reduce(0, +))
+                        self.collectionView.reloadData()
                     }
                 case .failure(let error):
                     print("DEBUG_PRINT: ", error.localizedDescription)
@@ -44,25 +39,53 @@ final class ViewController: UIViewController {
         }
     }
     
-}
-
-extension ViewController: UITableViewDelegate {
-    
-}
-
-extension ViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
-        items.count
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(CustomCollectionViewCell.nib,
+                                forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        collectionView.collectionViewLayout = layout
     }
     
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        let item = items[indexPath.row]
-        cell.textLabel?.text = item.title + item.value
+}
+
+extension ViewController: UICollectionViewDelegate {
+    
+}
+
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        gitHubGrass.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: CustomCollectionViewCell.identifier,
+            for: indexPath
+        ) as! CustomCollectionViewCell
+        let value = gitHubGrass[indexPath.item]
+        cell.configure(value: value)
         return cell
     }
     
 }
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = collectionView.frame.width / 7 - 10
+        return CGSize(width: cellWidth, height: cellWidth)
+    }
+    
+}
+
